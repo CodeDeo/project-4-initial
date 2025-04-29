@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 class GentlyDownTheStreamTest {
 
@@ -28,7 +29,7 @@ class GentlyDownTheStreamTest {
                                              .collect(Collectors.toList());
         List<String> actual = stream.sortedFruits();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -40,7 +41,7 @@ class GentlyDownTheStreamTest {
                                              .collect(Collectors.toList());
         List<String> actual = stream.sortedFruitsException();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -52,7 +53,7 @@ class GentlyDownTheStreamTest {
                                              .collect(Collectors.toList());
         List<String> actual = stream.sortedFruitsFirstTwo();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -63,7 +64,7 @@ class GentlyDownTheStreamTest {
                                        .collect(Collectors.joining(", "));
         String actual = stream.commaSeparatedListOfFruits();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -74,7 +75,7 @@ class GentlyDownTheStreamTest {
                                               .collect(Collectors.toList());
         List<String> actual = stream.reverseSortedVeggies();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -86,7 +87,7 @@ class GentlyDownTheStreamTest {
                                               .collect(Collectors.toList());
         List<String> actual = stream.reverseSortedVeggiesInUpperCase();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -98,7 +99,7 @@ class GentlyDownTheStreamTest {
                                                      .collect(Collectors.toList());
         List<Integer> actual = stream.topTen();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -111,7 +112,7 @@ class GentlyDownTheStreamTest {
                                                      .collect(Collectors.toList());
         List<Integer> actual = stream.topTenUnique();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -125,7 +126,7 @@ class GentlyDownTheStreamTest {
                                                      .collect(Collectors.toList());
         List<Integer> actual = stream.topTenUniqueOdd();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -137,6 +138,6 @@ class GentlyDownTheStreamTest {
                                               .getAsDouble();
         Double actual = stream.average();
 
-        assertThat(actual.equals(expected)).isTrue();
+        assertEquals(expected, actual);
     }
 }
